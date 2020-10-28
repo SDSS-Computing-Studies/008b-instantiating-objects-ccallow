@@ -73,3 +73,24 @@ Buster dog
 Shih-tzu is owned by Christy
 (10 points) 
 """
+
+class pets:
+    animalType = None
+    breed = None
+    name = None
+    owner = None
+    Birthdate = None
+    choice = None
+
+    def mainMenu(self):
+        print("1. Enter a pet \n 2. Retrieve a pet \n 3. Exit \n")
+        choice = input()
+
+    def displayPet(self):
+        output = self.name + self.animalType
+        output1 = self.breed + "is owned by" + self.owner
+        
+
+
+
+pets = []
