@@ -74,23 +74,54 @@ Shih-tzu is owned by Christy
 (10 points) 
 """
 
-class pets:
+class veterinarian:
     animalType = None
     breed = None
     name = None
     owner = None
-    Birthdate = None
-    choice = None
+    birthdate = None
 
-    def mainMenu(self):
-        print("1. Enter a pet \n 2. Retrieve a pet \n 3. Exit \n")
-        choice = input()
+    def __init__(self):
+        self.animalType = input("Type of animal?  ")
+        self.breed = input("Breed? ")
+        self.name = input("Name? ")
+        self.owner = input("Owner? ")
+        self.birthdate = input("Birthdate? ")
 
     def displayPet(self):
         output = self.name + self.animalType
         output1 = self.breed + "is owned by" + self.owner
-        
 
+
+
+
+def mainMenu():
+    print("\n1. Enter a pet \n2. Retrieve a pet \n3. Exit \n")
+    prompt = int(input())
+    return prompt
+
+def options(prompt):
+    if prompt == 1:
+        pets.append(veterinarian())
+    elif prompt ==2:
+        name1 = input("Which pet? \n") 
+        search(name1,pets)
+
+def search(name1, pets):
+    for i in pets:
+        if i.name == name1:
+            veterinarian.displayPet()
+            pets.index()
+        else:
+            print("Pet not found. Try again!")
+            break
+
+ 
 
 
 pets = []
+while True:
+    command = mainMenu()
+    options(command)
+    
+    
