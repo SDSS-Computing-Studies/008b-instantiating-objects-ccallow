@@ -89,8 +89,9 @@ class veterinarian:
         self.birthdate = input("Birthdate? ")
 
     def displayPet(self):
-        output = self.name + self.animalType
-        output1 = self.breed + "is owned by" + self.owner
+        output = str(self.name) + str(self.animalType)
+        output1 = str(self.breed) + "is owned by" + str(self.owner)
+        print(output + "\n"+ output1)
 
 
 
@@ -98,6 +99,7 @@ class veterinarian:
 def mainMenu():
     print("\n1. Enter a pet \n2. Retrieve a pet \n3. Exit \n")
     prompt = int(input())
+    print("=====\n")
     return prompt
 
 def options(prompt):
@@ -106,15 +108,17 @@ def options(prompt):
     elif prompt ==2:
         name1 = input("Which pet? \n") 
         search(name1,pets)
+    elif prompt == 3:
+        print("Exiting the system...")
+        break
 
 def search(name1, pets):
-    for i in pets:
-        if i.name == name1:
-            veterinarian.displayPet()
-            pets.index()
-        else:
-            print("Pet not found. Try again!")
-            break
+    length = len(pets)
+    for i in range(0,length):
+        name = pets[i].name
+        if name1 == name:
+            pets[i].display()
+           
 
  
 
