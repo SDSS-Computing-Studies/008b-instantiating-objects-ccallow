@@ -89,43 +89,36 @@ class veterinarian:
         self.birthdate = input("Birthdate? ")
 
     def displayPet(self):
-        output = str(self.name) + str(self.animalType)
-        output1 = str(self.breed) + "is owned by" + str(self.owner)
-        print(output + "\n"+ output1)
+        output = str(self.name) + " is a " + str(self.animalType)
+        output1 = str(self.breed) + " is owned by " + str(self.owner)
+        print("\n" + output + "\n"+ output1)
 
+def mainCode():
+    while True:
+        print("\n1. Enter a pet \n2. Retrieve a pet \n3. Exit \n")
+        prompt = int(input())
+        print("=====\n")
 
+        if prompt == 1:
+            pets.append(veterinarian())
+        elif prompt ==2:
+            name1 = input("Which pet? \n") 
+            length = len(pets)
+            for i in range(0,length):
+                name = pets[i].name
+                if name1 == name:
+                    pets[i].displayPet()
+                    break
+                else:
+                    print("Pet not found.")
 
+        elif prompt == 3:
+            print("Exiting the system...")
+            break
 
-def mainMenu():
-    print("\n1. Enter a pet \n2. Retrieve a pet \n3. Exit \n")
-    prompt = int(input())
-    print("=====\n")
-    return prompt
-
-def options(prompt):
-    if prompt == 1:
-        pets.append(veterinarian())
-    elif prompt ==2:
-        name1 = input("Which pet? \n") 
-        search(name1,pets)
-    elif prompt == 3:
-        print("Exiting the system...")
-        break
-
-def search(name1, pets):
-    length = len(pets)
-    for i in range(0,length):
-        name = pets[i].name
-        if name1 == name:
-            pets[i].display()
-           
-
- 
-
+        
 
 pets = []
-while True:
-    command = mainMenu()
-    options(command)
-    
-    
+
+
+mainCode()
